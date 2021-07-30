@@ -2,19 +2,14 @@ import React from 'react';
 import './ГЛАВНАЯ.css';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
-import pencil from '../../Images/pencil.png';
-import credit from '../../Images/credit-card.png';
-import customer from '../../Images/customer-support.png';
-import suitcase from '../../Images/suitcase.png';
-import swimg1 from "../../Images/swiperimg.jpg"
-import swimg2 from "../../Images/swiperimg2.jpg"
-import swimg3 from "../../Images/swiperimg3.jpg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSortAmountUp, faGlobe, faRunning } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import '../../../node_modules/swiper/swiper-bundle.min.css';
-import { value } from 'dom7';
+import advantages from '../../Data/advantagesData';
+import swiperData from '../../Data/swiperData';
+import homeservices from '../../Data/homeservices';
+import resultData from '../../Data/resultData';
 import { Link } from 'react-router-dom';
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 class Homecard extends React.Component {
@@ -25,30 +20,8 @@ class Homecard extends React.Component {
     }
 }
 
-const homeservices = [
-    { img: pencil, title: "ПРОЕКТИРОВАНИЕ", subtitle: "ПОДРОБНО ПРО ПРОЕКТИРОВАНИЕ" },
-    { img: suitcase, title: "МОНТАЖ", subtitle: "ПОДРОБНО ПРО МОНТАЖ" },
-    { img: credit, title: "ЗАПАСНЫЕ ЧАСТИ", subtitle: "ПОДРОБНО ПРО ЗАПАСНЫЕ ЧАСТИ" },
-    { img: customer, title: "РЕМОНТ", subtitle: "ПОДРОБНО ПРО РЕМОНТ" },
-]
-const resultData = [
-    { icon: faSortAmountUp, number: 300, title: "лифтов в год" },
-    { icon: faGlobe, number: 2, title: "года на рынке" },
-    { icon: faRunning, number: 200, title: "эскалаторов в год" },
-]
 
-const swiperData = [
-    { img: swimg1, title: "Osten 1" },
-    { img: swimg2, title: "Osten 2" },
-    { img: swimg3, title: "Osten 3" },
-    { img: swimg1, title: "Osten 4" },
-    { img: swimg2, title: "Osten 5" },
-    { img: swimg3, title: "Osten 6" },
-    { img: swimg1, title: "Osten 7" },
-    { img: swimg2, title: "Osten 8" },
-    { img: swimg3, title: "Osten 9" },
 
-]
 const ГЛАВНАЯ = () => {
     return (
         <div>
@@ -79,7 +52,7 @@ const ГЛАВНАЯ = () => {
                         <div className="row mt-5 justify-content-center">
                             {
                                 homeservices.map((value, index) => <Homecard className="col-md-6 col-10 col-lg-6 col-xl-3 text-center mt-5 home__box">
-                                    <Fade bottom>
+                                    <Fade bottom cascade >
                                         <div className="h-100">
                                             <div className="card border-0 rounded-2 py-5 px-3 h-100 home__card d-flex flex-column align-items-center">
                                                 <div>
@@ -92,8 +65,6 @@ const ГЛАВНАЯ = () => {
                                     </Fade>
                                 </Homecard>)
                             }
-
-
                         </div>
                     </div>
                 </div>
@@ -175,6 +146,64 @@ const ГЛАВНАЯ = () => {
                         <div className="text-center mt-4">
                             <Link to="/ПРОДУКЦИЯ" className="btn button">ВСЯ ПРОДУКЦИЯ</Link>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div className="advantages">
+                <div className="advantages__container section">
+                    <div className="container">
+                        <div className="text-center">
+                            <h1 className="title">Преимущества </h1>
+                        </div>
+                        <div className="row justify-content-center mt-5">
+                            {
+                                advantages.map((value, index) => <Homecard className="col-10 col-md-6 mt-4 mb-3 col-lg-4 advantages__cards">
+                                    <div className="advantages__card d-flex flex-column align-items-center">
+                                        <div className="icon__card d-flex align-items-center justify-content-center">
+                                            <FontAwesomeIcon icon={value.icon} />
+                                        </div>
+                                        <h4>{value.title}</h4>
+                                        <p> {value.subtitle} </p>
+                                    </div>
+                                </Homecard>)
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="cliets">
+                <div className="cliets__container section">
+                    <div className="text-center">
+                        <h1 className="title text-white">Отзывы клиентов </h1>
+                    </div>
+                    <div className="container mt-5">
+                        <Swiper className="my__swiper2"
+                            slidesPerView={1}
+                            loop={true}
+                            autoplay={{
+                                "delay": 2500,
+                                "disableOnInteraction": true
+                            }}
+                            scrollbar={true}  navigation={false} pagination={{
+
+                            }}  >
+                            <SwiperSlide>
+                                <div className="text-center text-white clietssw">
+                                    <h4>JOHN DOE . PROPERTY INVESTOR</h4>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Corporis nihil debitis at porro aliquam voluptas officiis
+                                        distinctio, inventore assumenda, natus placeat nobis consequuntur
+                                        temporibus in exercitationem! Dicta, natus aut voluptas vitae,
+                                        veritatis molestias velit debitis fugit ipsam ab dolore alias
+                                        maxime saepe tempore numquam, ipsa enim cum nam fuga molestiae!
+                                    </p>
+                                </div>
+                            </SwiperSlide>)
+                        </Swiper>
                     </div>
                 </div>
             </div>
