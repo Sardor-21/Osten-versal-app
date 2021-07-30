@@ -52,8 +52,8 @@ const ГЛАВНАЯ = () => {
                         <div className="row mt-5 justify-content-center">
                             {
                                 homeservices.map((value, index) => <Homecard className="col-md-6 col-10 col-lg-6 col-xl-3 text-center mt-5 home__box">
-                                    <Fade bottom cascade >
-                                        <div className="h-100">
+                                    <div className="h-100">
+                                        <Fade bottom cascade >
                                             <div className="card border-0 rounded-2 py-5 px-3 h-100 home__card d-flex flex-column align-items-center">
                                                 <div>
                                                     <img className="home__services-img mb-3" src={value.img} alt="" />
@@ -61,8 +61,8 @@ const ГЛАВНАЯ = () => {
                                                     <p>{value.subtitle}</p>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </Fade>
+                                        </Fade>
+                                    </div>
                                 </Homecard>)
                             }
                         </div>
@@ -187,13 +187,11 @@ const ГЛАВНАЯ = () => {
                                 "delay": 2500,
                                 "disableOnInteraction": true
                             }}
-                            scrollbar={true}  navigation={false} pagination={{
-
-                            }}  >
+                            scrollbar={true} navigation={false} >
                             <SwiperSlide>
                                 <div className="text-center text-white clietssw">
-                                    <h4>JOHN DOE . PROPERTY INVESTOR</h4>
-                                    <p>
+                                    <h4 className="title">JOHN DOE . PROPERTY INVESTOR</h4>
+                                    <p className="mt-5">
                                         Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                                         Corporis nihil debitis at porro aliquam voluptas officiis
                                         distinctio, inventore assumenda, natus placeat nobis consequuntur

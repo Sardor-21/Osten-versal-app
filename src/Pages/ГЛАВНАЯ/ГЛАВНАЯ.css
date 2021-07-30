@@ -38,7 +38,6 @@
 }
 
 .title {
-    width: 380px;
     margin: 0 auto;
     font-weight: 700;
     position: relative;
@@ -49,7 +48,7 @@
     position: absolute;
     bottom: -30px;
     left: 50%;
-    width: 100%;
+    width: 30%;
     height: 4px;
     background-color: black;
     transform: translateX(-50%);
@@ -60,7 +59,7 @@
     position: absolute;
     bottom: -30px;
     left: 50%;
-    width: 100%;
+    width: 30%;
     height: 4px;
     background-color: white;
     transform: translateX(-50%);
@@ -197,14 +196,26 @@
     position: absolute;
     bottom: -30px;
     left: 50%;
-    width: 100%;
+    width: 30%;
     height: 4px;
     background-color: white;
     transform: translateX(-50%);
 }
 
 .cliets__container {
-    background-color: rgba(0, 0, 0, 0.4);
+    background: rgb(9, 21, 45);
+    opacity: 0.8;
+}
+
+.clietssw .title::before {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 25%;
+    height: 2px;
+    background-color: white;
+    transform: translateX(-50%);
 }
 
 .clietssw p {
@@ -212,12 +223,10 @@
     font-weight: 600;
 }
 
-.my__swiper2 {
-    height: 200px;
-}
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
     bottom: 15px !important;
 }
+
 .swiper-scrollbar {
     bottom: 0px !important;
 }
