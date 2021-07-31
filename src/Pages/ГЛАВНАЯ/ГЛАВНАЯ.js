@@ -7,10 +7,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import '../../../node_modules/swiper/swiper-bundle.min.css';
 import advantages from '../../Data/advantagesData';
-import swiperData from '../../Data/swiperData';
 import homeservices from '../../Data/homeservices';
 import resultData from '../../Data/resultData';
-import { Link } from 'react-router-dom';
+import clients from '../../Data/cilents';
+import Swipers from '../../Components/Swiper/Swiper';
+import Swiper2 from '../../Components/Swiper2/Swiper2';
+
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 class Homecard extends React.Component {
     render() {
@@ -29,7 +31,7 @@ const ГЛАВНАЯ = () => {
                 <div className="home__container d-flex align-items-center">
                     <div className="container overflow-hidden">
                         <Zoom>
-                            <h1 className="home__title">«Osten» — уникальный производитель, лифтов и эскалаторов в Средней Азии</h1>
+                            <h1 className="gl__title">«Osten» — уникальный производитель, лифтов и эскалаторов в Средней Азии</h1>
                         </Zoom>
                         <Zoom>
                             <Fade right>
@@ -49,11 +51,11 @@ const ГЛАВНАЯ = () => {
                         </h1>
                     </div>
                     <div className="container">
-                        <div className="row mt-5 justify-content-center">
-                            {
-                                homeservices.map((value, index) => <Homecard className="col-md-6 col-10 col-lg-6 col-xl-3 text-center mt-5 home__box">
-                                    <div className="h-100">
-                                        <Fade bottom cascade >
+                        <Fade bottom cascade>
+                            <div className="row mt-5 justify-content-center">
+                                {
+                                    homeservices.map((value, index) => <div className="col-md-6 col-10 col-lg-6 col-xl-3 text-center mt-5 home__box">
+                                        <div className="h-100">
                                             <div className="card border-0 rounded-2 py-5 px-3 h-100 home__card d-flex flex-column align-items-center">
                                                 <div>
                                                     <img className="home__services-img mb-3" src={value.img} alt="" />
@@ -61,11 +63,11 @@ const ГЛАВНАЯ = () => {
                                                     <p>{value.subtitle}</p>
                                                 </div>
                                             </div>
-                                        </Fade>
-                                    </div>
-                                </Homecard>)
-                            }
-                        </div>
+                                        </div>
+                                    </div>)
+                                }
+                            </div>
+                        </Fade>
                     </div>
                 </div>
             </div>
@@ -90,90 +92,33 @@ const ГЛАВНАЯ = () => {
                     </div>
                 </div>
             </div>
-            <div className="kabini__liftov">
-                <div className="liftov section">
-                    <div className="text-center">
-                        <h1 className="title">Кабины лифтов</h1>
-                    </div>
-                    <div className="swiper__liftov container">
-                        <Swiper className="my__swiper"
-                            spaceBetween={20}
-                            slidesPerView={1}
-                            loop={true}
-                            pagination={{ clickable: true }}
-                            autoplay={{
-                                "delay": 2500,
-                                "disableOnInteraction": true
-                            }}
-                            breakpoints={{
-                                "640": {
-                                    "slidesPerView": 1,
-                                    "spaceBetween": 20,
-                                    "slidesPerGroup": 1,
-                                },
-                                "768": {
-                                    "slidesPerView": 2,
-                                    "slidesPerGroup": 2,
-                                    "spaceBetween": 40
-                                },
-                                "1200": {
-                                    "slidesPerView": 4,
-                                    "slidesPerGroup": 4,
-                                    "spaceBetween": 50
-                                },
-                                "1024": {
-                                    "slidesPerView": 3,
-                                    "slidesPerGroup": 3,
-                                    "spaceBetween": 50
-                                }
-                            }}
-
-                        >
-
-                            {
-                                swiperData.map((value, index) => <SwiperSlide>
-                                    <div className="swcard">
-                                        <img src={value.img} alt="" className="swimg" />
-                                        <div className="sw__title text-center">
-                                            <h4>{value.title}</h4>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>)
-                            }
-
-
-                        </Swiper>
-                        <div className="text-center mt-4">
-                            <Link to="/ПРОДУКЦИЯ" className="btn button">ВСЯ ПРОДУКЦИЯ</Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Swipers />
             <div className="advantages">
                 <div className="advantages__container section">
                     <div className="container">
                         <div className="text-center">
                             <h1 className="title">Преимущества </h1>
                         </div>
-                        <div className="row justify-content-center mt-5">
-                            {
-                                advantages.map((value, index) => <Homecard className="col-10 col-md-6 mt-4 mb-3 col-lg-4 advantages__cards">
-                                    <div className="advantages__card d-flex flex-column align-items-center">
-                                        <div className="icon__card d-flex align-items-center justify-content-center">
-                                            <FontAwesomeIcon icon={value.icon} />
+                        <Fade bottom cascade>
+                            <div className="row justify-content-center mt-5">
+                                {
+                                    advantages.map((value, index) => <div className="col-10 col-md-6 mt-4 mb-3 col-lg-4 advantages__cards">
+                                        <div className="advantages__card d-flex flex-column align-items-center">
+                                            <div className="icon__card d-flex align-items-center justify-content-center">
+                                                <FontAwesomeIcon icon={value.icon} />
+                                            </div>
+                                            <h4>{value.title}</h4>
+                                            <p> {value.subtitle} </p>
                                         </div>
-                                        <h4>{value.title}</h4>
-                                        <p> {value.subtitle} </p>
-                                    </div>
-                                </Homecard>)
-                            }
+                                    </div>)
+                                }
 
 
-                        </div>
+                            </div>
+                        </Fade>
                     </div>
                 </div>
             </div>
-
             <div className="cliets">
                 <div className="cliets__container section">
                     <div className="text-center">
@@ -188,23 +133,25 @@ const ГЛАВНАЯ = () => {
                                 "disableOnInteraction": true
                             }}
                             scrollbar={true} navigation={false} >
-                            <SwiperSlide>
-                                <div className="text-center text-white clietssw">
-                                    <h4 className="title">JOHN DOE . PROPERTY INVESTOR</h4>
-                                    <p className="mt-5">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Corporis nihil debitis at porro aliquam voluptas officiis
-                                        distinctio, inventore assumenda, natus placeat nobis consequuntur
-                                        temporibus in exercitationem! Dicta, natus aut voluptas vitae,
-                                        veritatis molestias velit debitis fugit ipsam ab dolore alias
-                                        maxime saepe tempore numquam, ipsa enim cum nam fuga molestiae!
-                                    </p>
-                                </div>
-                            </SwiperSlide>)
+                            {
+                                clients.map(v => <div>
+                                    <SwiperSlide>
+                                        <div className="text-center text-white clietssw">
+                                            <h4 className="title">
+                                                {v.title}
+                                            </h4>
+                                            <p className="mt-5">
+                                                {v.description}
+                                            </p>
+                                        </div>
+                                    </SwiperSlide>
+                                </div>)
+                            }
                         </Swiper>
                     </div>
                 </div>
             </div>
+            <Swiper2/>
         </div>
     )
 }

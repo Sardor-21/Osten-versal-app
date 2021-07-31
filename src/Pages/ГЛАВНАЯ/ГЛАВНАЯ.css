@@ -15,10 +15,10 @@
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.home__container .home__title {
+.gl__title {
     font-size: 60px;
     text-shadow: rgb(9 21 45 / 47%) 6px 4px 6px;
-    font-weight: 700;
+    font-weight: 900;
     color: white;
 }
 
@@ -238,7 +238,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .home__container .home__title {
+    .gl__title {
         font-size: 40px;
     }
     .home {
@@ -247,7 +247,7 @@
 }
 
 @media screen and (max-width: 500px) {
-    .home__container .home__title {
+    .gl__title {
         margin-top: 30px;
         font-size: 38px;
     }

@@ -1,0 +1,38 @@
+.about {
+    background-image: url('../../Images//about.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.about__container {
+    height: 480px;
+    background: linear-gradient( 90deg, rgba(9, 21, 45, 0.7) 0%, rgba(9, 21, 45, 0.25) 35%, rgba(0, 212, 255, 0) 100%);
+}
+
+.about__container .gl__title {
+    text-shadow: rgb(0 0 0) 5px 5px 5px;
+}
+
+.about__container p {
+    font-size: 22px;
+    margin: 10px 0px 0px;
+    font-weight: 700;
+}
+.gl__about .content {
+    column-count: 2;
+}
+.gl__about .content img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 992px) {
+    .gl__about .content {
+        column-count: 1;
+    }
+}
+@media screen and (max-width: 768px) {
+    .gl__about .content {
+        column-count: 1;
+    }
+}

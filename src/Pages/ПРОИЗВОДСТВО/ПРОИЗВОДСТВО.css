@@ -1,0 +1,20 @@
+.productTabs {
+    color: black;
+}
+.productimg {
+    object-fit: cover;
+}
+.production p {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 992px) {
+    .productimg {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .productimg {
+        width: 80%;
+    }
+}

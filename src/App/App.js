@@ -8,6 +8,7 @@ import КОНСТРУКТОР from "../Pages/КОНСТРУКТОР";
 import НОВОСТИ from "../Pages/НОВОСТИ";
 import КОНТАКТЫ from "../Pages/КОНТАКТЫ";
 import { Route, Switch } from "react-router-dom";
+import Footer from "../Containers/Footer";
 
 const routrs = [
   { path: "/", components: <ГЛАВНАЯ />, exact: true },
@@ -31,6 +32,7 @@ function App() {
           </Route>)
         }
       </Switch>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,43 @@
+.constructor p {
+    font-size: 22px;
+}
+
+.lift__container {
+    position: relative;
+}
+
+.colors {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.colors:hover {
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.bac1 {
+    position: absolute;
+    top: 20%;
+    right: 9%;
+    width: 46.5%;
+    height: 60%;
+    transform: perspective(100px) rotateY(-6.3deg);
+    transform: perspective(100px) rotateZ(10px);
+    /* transform: perspective(400px) rotateZ(0deg); */
+}
+
+.bg1 {
+    background-color: red;
+}
+
+.bg2 {
+    background-color: blue;
+}
+
+.bg3 {
+    background-color: black;
+}
