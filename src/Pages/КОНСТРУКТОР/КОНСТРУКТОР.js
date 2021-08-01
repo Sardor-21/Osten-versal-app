@@ -1,62 +1,177 @@
 import './КОНСТРУКТОР.css';
 import Containers from '../../Containers/Container/Container';
-import lift from '../../Images/Constructor/lift.png';
 import Glpage from '../../Components/Glpages/Glpage';
-import React, { Component } from 'react'
+import mirrorimg1 from '../../Images/Constructor/mirror-ful.png';
+import mirrorimg2 from '../../Images/Constructor/mirror-half.png';
+import mirrorimg3 from '../../Images/Constructor/mirror-half-small.png';
+import handerimg1 from '../../Images/Constructor/backwall-handrail.png';
+import handerimg2 from '../../Images/Constructor/sidewall-handrail.png';
+import React, { useState } from 'react'
 
-export default class КОНСТРУКТОР extends Component {
+const КОНСТРУКТОР = () => {
+    const [a, seta] = useState(false);
+    const [b, setb] = useState(false);
+    const [c, setc] = useState(false);
+    const [e, sete] = useState(false);
+    const [f, setf] = useState(false);
+    const [g, setg] = useState(false);
+    const [mirror1, setmirror1] = useState(false);
+    const [mirror2, setmirror2] = useState(false);
+    const [mirror3, setmirror3] = useState(false);
+    const [hander1, sethander1] = useState(false)
+    const [hander2, sethander2] = useState(false)
 
-    state = { a: false, b: false, c: false }
 
-    bg1 = () => {
-        this.setState((state) => {
-            return { a: true, b: false, c: false }
-        })
+    const bg1 = () => {
+        seta(true)
+        setb(false)
+        setc(false)
     }
-    bg2 = () => {
-        this.setState((state) => {
-            return { a: false, b: true, c: false }
-        })
+    const bg2 = () => {
+        seta(false)
+        setb(true)
+        setc(false)
     }
-    bg3 = () => {
-        this.setState((state) => {
-            return { a: false, b: false, c: true }
-        })
+    const bg3 = () => {
+        seta(false)
+        setb(false)
+        setc(true)
     }
-    render() {
-        return (
-            <div className="constructor">
-                <Containers>
-                    <Glpage>
-                        <h1 className="gl__title">КОНСТРУКТОР</h1>
-                    </Glpage>
-                    <div className="container section">
-                        <div className="text-center mb-5">
-                            <h1 className="title">Создайте интерьер своего лифта</h1>
-                        </div>
-                        <div className="lift__content mt-5 pt-5">
-                            <div className="row">
-                                <div className="col-lg-4 lift__container">
-                                    <img src={lift} className="lift w-100" alt="" />
-                                    <div className={`bac1  ${this.state.a && 'bg1' || this.state.b && 'bg2' || this.state.c && 'bg3' } `}></div>
+    const bg4 = () => {
+        sete(true)
+        setf(false)
+        setg(false)
+    }
+    const bg5 = () => {
+        sete(false)
+        setf(true)
+        setg(false)
+    }
+    const bg6 = () => {
+        sete(false)
+        setf(false)
+        setg(true)
+    }
+
+    const mir1 = () => {
+        setmirror1(true);
+        setmirror2(false);
+        setmirror3(false);
+    }
+    const mir2 = () => {
+        setmirror1(false);
+        setmirror2(true);
+        setmirror3(false);
+    }
+    const mir3 = () => {
+        setmirror1(false);
+        setmirror2(false);
+        setmirror3(true);
+    }
+    const close = () => {
+        setmirror1(false);
+        setmirror2(false);
+        setmirror3(false);
+    }
+    const close2 = () => {
+        sethander1(false)
+        sethander2(false)
+    }
+
+    const hander = () => {
+        sethander1(true);
+        sethander2(false);
+    }
+    const handerl2 = () => {
+        sethander1(false);
+        sethander2(true);
+    }
+
+    return (
+        <div className="constructor">
+            <Containers>
+                <Glpage>
+                    <h1 className="gl__title">КОНСТРУКТОР</h1>
+                </Glpage>
+                <div className="container section">
+                    <div className="text-center mb-5">
+                        <h1 className="title">Создайте интерьер своего лифта</h1>
+                    </div>
+                    <div className="lift__content mt-5 pt-5">
+                        <div className="row w-100 m-0 justify-content-center">
+                            <div className="col-lg-4 col-md-10 col-10  lift__container">
+                                <div className={`bac1 ${a && "bg1" || b && "bg2" || c && "bg3"}`}></div>
+                                <div className={`bac2 ${e && "bg1" || f && "bg2" || g && "bg3"}`}></div>
+                                <img className={` w-100 d-none ${mirror1 && "bac3" || mirror2 && "bac3" || mirror3 && "bac3"} `} src={mirror1 && mirrorimg1 || mirror2 && mirrorimg2 || mirror3 && mirrorimg3} alt="" />
+                                <img src={hander1 && handerimg1} className={`d-none ${hander1 && 'handerlist1'}`} alt="" />
+                                <img src={hander2 && handerimg2} className={`d-none ${hander2 && 'handerlist2'}`} alt="" />
+                            </div>
+                            <div className="col-lg-8 col-md-10 col-10 ps-5">
+                                <p><b>
+                                    Создайте свой собственный интерьер лифта онлайн уже сегодня.
+                                    Выберите дизайн из коллекции "COMPANY NAME",
+                                    комбинируйте материалы, освещение и аксессуары,
+                                    чтобы создать уникальный интерьер лифта.</b></p>
+                                <div>
+                                    <p><b>Шаг 1</b> -  Размеры подъемника</p>
                                 </div>
-                                <div className="col-lg-6 p-5">
-                                    <div>
-                                        <p><b>Шаг2</b> - Выберем цвет боковых стенок</p>
+                                <div className="d-flex w-100 row">
+                                    <div className="col-lg-6 col-xl-5">
+                                        <p>Высота (мм)</p>
+                                        <p>Глубина (мм) Боковые стенки</p>
+                                        <p>Ширина (мм) Задние стенки</p>
                                     </div>
-                                    <div className="d-flex">
-                                        <div className="colors bg1" onClick={() => this.bg1()}></div>
-                                        <div className="colors bg2" onClick={() => this.bg2()}></div>
-                                        <div className="colors bg3" onClick={() => this.bg3()}></div>
+                                    <div className="col-lg-6 col-xl-7">
+                                        <input type="number" className="form-control w-100 mb-2" placeholder="Высота" />
+                                        <input type="number" className="form-control w-100 mb-2" placeholder="Глубина" />
+                                        <input type="number" className="form-control w-100 mb-2" placeholder="Ширина" />
                                     </div>
+                                </div>
+                                <div>
+                                    <p><b>Шаг 2</b> - Выберем цвет боковых стенок</p>
+                                </div>
+                                <div className="d-flex">
+                                    <div className="colors bg1" onClick={bg1}>  </div>
+                                    <div className="colors bg2" onClick={bg2}> </div>
+                                    <div className="colors bg3" onClick={bg3}>
+
+                                    </div>
+                                </div>
+                                <div>
+                                    <p><b>Шаг 3</b> - Выберем цвет задней стенки</p>
+                                </div>
+                                <div className="d-flex">
+                                    <div className="colors bg1" onClick={bg4}>  </div>
+                                    <div className="colors bg2" onClick={bg5}> </div>
+                                    <div className="colors bg3" onClick={bg6}></div>
+                                </div>
+                                <div>
+                                    <p><b>Шаг 4</b> - Выберем стиль зеркала</p>
+                                </div>
+                                <div className="d-flex">
+                                    <div className="colors mirror1" onClick={mir1}></div>
+                                    <div className="colors mirror2" onClick={mir2}></div>
+                                    <div className="colors mirror3" onClick={mir3}></div>
+                                    <div className="colors close" onClick={close}></div>
+                                </div>
+                                <div>
+                                    <p><b>Шаг 5</b> - Возьмем поручни</p>
+                                </div>
+                                <div className="d-flex">
+                                    <div className="colors handerlis1" onClick={hander}></div>
+                                    <div className="colors handerlis2" onClick={handerl2}></div>
+                                    <div className="colors close" onClick={close2}></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </Containers>
-            </div>
-        )
-    }
+                </div>
+            </Containers>
+        </div>
+    )
 }
+
+export default КОНСТРУКТОР
+
 
 

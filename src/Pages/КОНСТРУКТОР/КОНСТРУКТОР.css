@@ -1,9 +1,21 @@
+.constructor {
+    overflow: hidden;
+}
+
 .constructor p {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .lift__container {
     position: relative;
+    height: 600px;
+    background-image: url('../../Images/Constructor/lift.png');
+    background-size: 100% 100%;
+}
+
+.lift {
+    position: static;
+    top: 70px;
 }
 
 .colors {
@@ -21,23 +33,205 @@
 
 .bac1 {
     position: absolute;
-    top: 20%;
-    right: 9%;
-    width: 46.5%;
-    height: 60%;
-    transform: perspective(100px) rotateY(-6.3deg);
-    transform: perspective(100px) rotateZ(10px);
-    /* transform: perspective(400px) rotateZ(0deg); */
+    top: 19.8%;
+    right: 6%;
+    width: 49%;
+    height: 60.5%;
+    transform: perspective(100px) rotateY(-5deg);
+}
+
+.bac2 {
+    position: absolute;
+    top: 20.1%;
+    left: 5%;
+    width: 43.3%;
+    height: 59.9%;
+    transform: perspective(100px) rotateY(5.3deg);
 }
 
 .bg1 {
-    background-color: red;
+    background-image: url('../../Images/Constructor/bac1.jpg');
+    background-size: cover;
 }
 
 .bg2 {
-    background-color: blue;
+    background-image: url('../../Images/Constructor/bac2.jpg');
+    background-size: cover;
 }
 
 .bg3 {
-    background-color: black;
+    background-image: url('../../Images/Constructor/bac3.jpg');
+    background-size: cover;
+}
+
+.bac3 {
+    position: absolute;
+    top: 17%;
+    left: 1%;
+    width: 50%;
+    height: 58%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: perspective(2100px) rotateY(2deg);
+    display: block !important;
+}
+
+.mirror1 {
+    background-image: url('../../Images/Constructor/icon-mirror-full.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mirror2 {
+    background-image: url('../../Images/Constructor/icon-mirror-half.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mirror3 {
+    background-image: url('../../Images/Constructor/icon-mirror-half-small.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.close {
+    background-image: url('../../Images/Constructor/icon-mirror-none.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mirrorimg1 {
+    background-image: url('../../Images/Constructor/mirror-ful.png');
+}
+
+.mirrorimg2 {
+    background-image: url('../../Images/Constructor/mirror-half.png');
+}
+
+.mirrorimg3 {
+    background-image: url('../../Images/Constructor/mirror-half-small.png');
+}
+
+.handerlis1 {
+    background-image: url("../../Images/Constructor/handrails1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.handerlis2 {
+    background-image: url("../../Images/Constructor/handrails1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.handerlist1 {
+    position: absolute;
+    top: 17%;
+    left: 5%;
+    width: 80%;
+    height: 58%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: perspective(2100px) rotateY(2deg);
+    display: block !important;
+}
+
+.handerlist2 {
+    position: absolute;
+    top: 17%;
+    right: 5%;
+    width: 80%;
+    height: 58%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: perspective(2100px) rotateY(2deg);
+    display: block !important;
+}
+
+.handerlist1 img {
+    width: 200px;
+}
+
+@media screen and (max-width: 1400px) {
+    .bac1 {
+        top: 20%;
+        width: 50%;
+        height: 60%;
+        transform: perspective(100px) rotateY(-6deg);
+    }
+    .bac2 {
+        top: 20.5%;
+        height: 59.3%;
+        transform: perspective(100px) rotateY(6deg);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .lift__container {
+        max-height: 500px !important;
+    }
+    .bac1 {
+        top: 19.6%;
+        width: 49%;
+        height: 60.5%;
+        transform: perspective(100px) rotateY(-6deg);
+    }
+    .bac2 {
+        top: 19.9%;
+        height: 60%;
+        transform: perspective(100px) rotateY(7deg);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .lift__container {
+        max-height: 600px !important;
+        margin-bottom: 30px;
+    }
+    .bac1 {
+        top: 19.6%;
+        width: 50%;
+        height: 60.5%;
+        transform: perspective(100px) rotateY(-3.9deg);
+    }
+    .bac2 {
+        top: 19.9%;
+        left: 4.5%;
+        width: 43%;
+        height: 60%;
+        transform: perspective(100px) rotateY(4deg);
+    }
+
+}
+
+@media screen and (max-width: 520px) {
+    .lift__container {
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    .bac1 {
+        top: 19.5%;
+        right: 6% !important;
+        width: 49.3%;
+        height: 61%;
+        transform: perspective(100px) rotateY(-6deg);
+    }
+    .bac2 {
+        top: 19.9%;
+        left: 4.5%;
+        width: 43%;
+        height: 60.3%;
+        transform: perspective(100px) rotateY(6deg);
+    }
+
+    .colors {
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+    }
 }
