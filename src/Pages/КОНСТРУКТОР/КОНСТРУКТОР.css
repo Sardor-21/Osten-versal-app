@@ -1,5 +1,8 @@
-.constructor {
-    overflow: hidden;
+.lifts {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 75px !important;
+    height: 600px;
 }
 
 .constructor p {
@@ -36,16 +39,16 @@
     top: 19.8%;
     right: 6%;
     width: 49%;
-    height: 60.5%;
-    transform: perspective(100px) rotateY(-5deg);
+    height: 60.9%;
+    transform: perspective(100px) rotateY(-5.5deg);
 }
 
 .bac2 {
     position: absolute;
     top: 20.1%;
-    left: 5%;
-    width: 43.3%;
-    height: 59.9%;
+    left: 4.8%;
+    width: 43.5%;
+    height: 60%;
     transform: perspective(100px) rotateY(5.3deg);
 }
 
@@ -155,6 +158,62 @@
     width: 200px;
 }
 
+.lifttop {
+    position: absolute;
+    top: -32.1%;
+    left: 4%;
+    width: 90.7%;
+    height: 93%;
+    clip-path: polygon(0 67%, 54.5% 0, 101% 61%, 47% 96%);
+    transform: perspective(4000px) rotateX(80.5deg);
+    background-position: center bottom;
+}
+
+.liftbottom {
+    position: absolute;
+    bottom: -32.1%;
+    left: 0%;
+    width: 97%;
+    height: 93%;
+    clip-path: polygon(0 35%, 48% -0%, 100% 45%, 55.5% 100%);
+    transform: perspective(4000px) rotateX(80.2deg);
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.lifticon {
+    background-image: url("../../Images/Constructor/liftbottom.jpg");
+}
+
+.imagestop {
+    width: 123px;
+    height: 100px;
+    transition: 0.5s;
+    margin-left: 20px;
+}
+
+.imagestop:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.topimg1 {
+    background-color: black;
+    background-size: 100% 100%;
+}
+
+.topimg2 {
+    background-color: blue;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.topimg3 {
+    background-color: red;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 1400px) {
     .bac1 {
         top: 20%;
@@ -187,6 +246,9 @@
 }
 
 @media screen and (max-width: 992px) {
+    .lifts {
+        position: unset !important;
+    }
     .lift__container {
         max-height: 600px !important;
         margin-bottom: 30px;
@@ -204,7 +266,6 @@
         height: 60%;
         transform: perspective(100px) rotateY(4deg);
     }
-
 }
 
 @media screen and (max-width: 520px) {
@@ -228,7 +289,6 @@
         height: 60.3%;
         transform: perspective(100px) rotateY(6deg);
     }
-
     .colors {
         width: 50px;
         height: 50px;

@@ -1,0 +1,7 @@
+.newsimg {
+    height: 300px;
+}
+
+.newscard:hover h4 {
+    color: #ED9D01;
+}
