@@ -6,7 +6,13 @@ import mirrorimg2 from '../../Images/Constructor/mirror-half.png';
 import mirrorimg3 from '../../Images/Constructor/mirror-half-small.png';
 import handerimg1 from '../../Images/Constructor/backwall-handrail.png';
 import handerimg2 from '../../Images/Constructor/sidewall-handrail.png';
-import React, { useState } from 'react'
+import bac1 from "../../Images/Constructor/bac1.png";
+import bac2 from "../../Images/Constructor/bac2.png";
+import bac3 from "../../Images/Constructor/bac3.png";
+import bac4 from "../../Images/Constructor/bac4.png";
+import bac5 from "../../Images/Constructor/bac5.png";
+import bac6 from "../../Images/Constructor/bac6.png";
+import React, { useState } from 'react';
 
 const КОНСТРУКТОР = () => {
     const [a, seta] = useState(false);
@@ -123,8 +129,8 @@ const КОНСТРУКТОР = () => {
                         <div className="row w-100 m-0 justify-content-center">
                             <div className="col-lg-4 col-md-10 col-10 lifts">
                                 <div className="lift__container">
-                                    <div className={`bac1 ${a && "bg1" || b && "bg2" || c && "bg3"}`}></div>
-                                    <div className={`bac2 ${e && "bg1" || f && "bg2" || g && "bg3"}`}></div>
+                                    <img className={`bg_right ${a && "d-block" || b && "d-block"|| c && "d-block"}`} src={a && bac1 || b && bac2 || c && bac3} alt=""/>
+                                    <img className={`bg_left ${e && "d-block" || f && "d-block" || g && "d-block"} ` } src={e && bac4 || f && bac5 || g && bac6} alt=""/>
                                     <img className={` w-100 d-none ${mirror1 && "bac3" || mirror2 && "bac3" || mirror3 && "bac3"} `}
                                         src={mirror1 && mirrorimg1 || mirror2 && mirrorimg2 || mirror3 && mirrorimg3} alt="" />
                                     <img src={hander1 && handerimg1} className={`d-none ${hander1 && 'handerlist1'}`} alt="" />
@@ -160,8 +166,7 @@ const КОНСТРУКТОР = () => {
                                 <div className="d-flex mb-4">
                                     <div className="colors bg1" onClick={bg1}>  </div>
                                     <div className="colors bg2" onClick={bg2}> </div>
-                                    <div className="colors bg3" onClick={bg3}>
-                                    </div>
+                                    <div className="colors bg3" onClick={bg3}> </div>
                                 </div>
                                 <div className="mb-4">
                                     <p><b>Шаг 3</b> - Выберем цвет задней стенки</p>
